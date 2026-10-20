@@ -1,12 +1,12 @@
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import Header from "./components/Layout/Header";
+import Sidebar from "./components/Layout/Sidebar";
 
 function App() {
   
   return (
     <>
-      <div>
-        <div>
+      <div className="min-h-screen" >
+        <div className="flex h-screen ">
           <Sidebar/>
           <div>
             <Header/>
