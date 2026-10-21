@@ -60,10 +60,10 @@ const Sidebar = () => {
           <BsTwitterX size={30}/>
         </div>
 
-        <nav className="bg-amber-300 flex-1 ">
+        <nav className="flex flex-col flex-1">
           {
             menuItems.map((item) => (
-              <div key={item.id} className="bg-blue-600">
+              <div key={item.id} className="flex-1 ">
                 <button className="w-full flex items-center p-3 space-x-3">
                   <item.icon/> 
                   <span>{item.label}</span>

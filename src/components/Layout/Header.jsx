@@ -1,10 +1,13 @@
 
 import React from 'react'
 
-const Header = () => {
+export const Header
+ = () => {
   return (
-    <div>Header</div>
+    <div className='flex justify-between p-5 border-b '>
+      <a>For you</a>
+      <a>Following</a>
+      <button>+</button>
+    </div>
   )
 }
-
-export default Header
