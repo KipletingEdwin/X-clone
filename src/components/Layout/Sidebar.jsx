@@ -67,7 +67,6 @@ const Sidebar = () => {
                 <button className="w-full flex items-center p-3 space-x-3">
                   <item.icon/> 
                   <span>{item.label}</span>
-
                 </button>
               </div>
             ))
@@ -75,7 +74,7 @@ const Sidebar = () => {
         </nav>
 
         <div className="py-2">
-          <button className="py-5 px-25  rounded-4xl bg-white text-black font-bold text-xl ">Post</button>
+          <button className="py-5 px-20  rounded-4xl bg-white text-black font-bold text-xl cursor-pointer ">Post</button>
         </div>
 
         <div className="p-4">
