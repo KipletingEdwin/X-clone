@@ -2,58 +2,69 @@
 import { BadgeCheck, Bell, Bookmark, CircleEllipsis, Home, MessageCircle, Phone, Search, UserRound } from "lucide-react";
 import React from "react";
 import { BsTwitterX } from "react-icons/bs";
+import { NavLink, Outlet } from "react-router";
 
 const menuItems = [
   {
     id: "home",
     icon: Home, 
-    label: "Home"
+    label: "Home",
+    link: './home'
   },
     {
     id: "explore",
     icon: Search, 
-    label: "Explore"
+    label: "Explore",
+    link: './explore'
   },
     {
     id: "notifications",
     icon: Bell, 
-    label: "Notifications"
+    label: "Notifications",
+    link: './notifications'
   },
     {
     id: "chat",
     icon: MessageCircle, 
-    label: "Chat"
+    label: "Chat",
+    link: './chat'
   },
     {
     id: "calls",
     icon: Phone, 
-    label: "Calls"
+    label: "Calls",
+    link: './calls'
   },
     {
     id: "history",
     icon: Bookmark, 
-    label: "History"
+    label: "History",
+    link: './history'
   },
     {
     id: "premium",
     icon: BadgeCheck, 
-    label: "Premium"
+    label: "Premium",
+    link: './premium'
   },
     {
     id: "profile",
     icon: UserRound, 
-    label: "Profile"
+    label: "Profile",
+    link: './profile'
   },
     {
     id: "more",
     icon: CircleEllipsis, 
-    label: "More"
+    label: "More",
+    link: './more'
   },
 
 ]
 
 const Sidebar = () => {
   return (
+    <div className="flex " > 
     <div className="w-72 border-r">
       <div className="h-screen flex flex-col justify-between pl-8">
         <div className="p-5">
@@ -63,12 +74,18 @@ const Sidebar = () => {
         <nav className="flex flex-col flex-1">
           {
             menuItems.map((item) => (
-              <div key={item.id} className="flex-1 ">
-                <button className="w-full flex items-center p-3 space-x-3">
-                  <item.icon/> 
-                  <span>{item.label}</span>
-                </button>
-              </div>
+              <div className="flex-1" key={item.id} >  
+              <NavLink 
+                 key={item.id}  
+                 to={item.link}
+                 className="flex items-center space-x-3 w-full"
+
+                 > 
+                 <item.icon/> 
+                 <span>{item.label}
+                 </span>
+                 </NavLink>
+                 </div>
             ))
           }
         </nav>
@@ -93,7 +110,25 @@ const Sidebar = () => {
         </div>
       </div>
     </div>
+    
+    <div>
+      <Outlet/>
+    </div>
+    </div>
   );
 };
 
 export default Sidebar;
+
+
+
+
+
+
+
+
+
+
+
+
+

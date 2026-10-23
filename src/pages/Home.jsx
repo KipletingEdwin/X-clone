@@ -1,8 +1,9 @@
 
-import React from 'react'
 
-export const Home = () => {
+export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <p className="p-4 text-x-muted">Home page</p>
+    </>
+  );
 }
