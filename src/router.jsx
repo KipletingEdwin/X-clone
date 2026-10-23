@@ -1,7 +1,5 @@
+
 import { createBrowserRouter } from "react-router";
-import { AuthLayout } from "./pages/AuthLayout";
-import Sidebar from "./pages/Sidebar";
-import Home from "./pages/Home";
 import { Explore } from "./pages/Explore";
 import { Notifications } from "./pages/Notifications";
 import { Chat } from "./pages/Chat";
@@ -11,54 +9,53 @@ import { Premium } from "./pages/Premium";
 import { More } from "./pages/More";
 import { Profile } from "./pages/Profile";
 import { NotFound } from "./pages/NotFound";
-
+import { Home } from "./pages/Home";
+import { AuthLayout } from "./pages/AuthLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Sidebar/>,
-    errorElement: <NotFound/>,
+    element: <AuthLayout/>,
+    errorElement: <NotFound />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Home/>
       },
-            {
+      {
         path: "/explore",
-        element: <Explore/>
+        element: <Explore />,
       },
-            {
+      {
         path: "/notifications",
-        element: <Notifications/>
+        element: <Notifications />,
       },
-            {
+      {
         path: "/chat",
-        element: <Chat/>
+        element: <Chat />,
       },
-            {
+      {
         path: "/calls",
-        element: <Calls/>
+        element: <Calls />,
       },
-            {
+      {
         path: "/history",
-        element: <History/>
+        element: <History />,
       },
-            {
+      {
         path: "/premium",
-        element: <Premium/>
+        element: <Premium />,
       },
-            {
+      {
         path: "/profile",
-        element: <Profile/>
+        element: <Profile />,
       },
-            {
+      {
         path: "/more",
-        element: <More/>
+        element: <More />,
       },
-    ]
-  }
-
+    ],
+  },
 ]);
 
 export default router;
-
